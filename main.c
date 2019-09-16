@@ -34,6 +34,7 @@ volatile uint8 Centena=0;
 volatile uint8 Mil=0;
 volatile uint8 Data_Value=0; //variable_de_datos
 //volatile uint8 Centena=0;
+void visualizacion(char *data_print);
 void Switch_Counter(){
  if(cont_event<=4){
   cont_event++;
@@ -126,7 +127,7 @@ void Type_Load(int x){
        ;
 
 }
-    
+    visualizacion(Data_print);
 }
 
 void visualizacion(char *datos){

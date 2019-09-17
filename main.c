@@ -33,8 +33,8 @@ volatile uint8 Decena=0;
 volatile uint8 Centena=0;
 volatile uint8 Mil=0;
 volatile uint8 Data_Value=0; //variable_de_datos
-//volatile uint8 Centena=0;
 void visualizacion(char *data_print);
+//volatile uint8 Centena=0;
 void Switch_Counter(){
  if(cont_event<=4){
   cont_event++;
@@ -70,7 +70,7 @@ void Type_Load(int x){
       }
    break;
    case 2:
-      
+     
       if(x==1){
         if(trx<60 && trx1<60){
          Sref=trx;
@@ -124,10 +124,8 @@ void Type_Load(int x){
    break;
    default:
    break;
-       ;
-
-}
-    visualizacion(Data_print);
+    }
+  visualizacion(Datos_print);    
 }
 
 void visualizacion(char *datos){
@@ -151,10 +149,10 @@ CY_ISR(Cuenta2)
   }else if(total_ref!=0){
      Segundos=59;
   }else if(total_ref==0){
-     pin1_Write(1);
+     //pin1_Write(1);
   }
 //  if(Conter_Milis_ReadCounter()==60){
-//    pin1_Write(0);
+    pin1_Write(1);
 //    CyDelay(500);
 //  }   
 
@@ -192,7 +190,7 @@ int temp2=0;
     pin1_Write(0);
      // Led_Display_PutChar7Seg('e',2);
     while(C1_Read()==1){
-      CyDelay(170);
+      CyDelay(70);
       temp2=1;
     }   
 
@@ -228,7 +226,7 @@ int temp2=0;
 //Pin_1_Write(1);
      // Led_Display_PutChar7Seg('e',2);
     while(C2_Read()==1){
-     CyDelay(170);
+     CyDelay(70);
      temp2=1;
     };
     //temp2=1;
@@ -264,7 +262,7 @@ int temp2=0;
 pin1_Write(0);
      // Led_Display_PutChar7Seg('e',2);
     while(C3_Read()==1){
-     CyDelay(170);
+     CyDelay(70);
      temp2=1;
     };
     //temp2=1;
@@ -298,7 +296,7 @@ int temp2=0;
 //Pin_1_Write(1);
      // Led_Display_PutChar7Seg('e',2);
     while(C4_Read()==1){
-     CyDelay(170);
+     CyDelay(70);
      temp2=1;
     };
   //  temp2=1;
